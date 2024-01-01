@@ -92,10 +92,10 @@ test_image = Image.open(test_image_path)
 test_image.show()
 
 # Convert the image to a numpy array
-image_array = np.array(test_image)
+test_image = np.array(test_image)
 
 # Assuming you have a young face image (X_test)
-X_test = X_test.astype('float32') / 255.
+test_image = test_image.astype('float32') / 255.
 
 # Predict the older version of the face
-predicted_old_face = autoencoder.predict(X_test)
+predicted_old_face = autoencoder.predict(test_image)
