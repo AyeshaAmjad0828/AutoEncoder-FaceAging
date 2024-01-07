@@ -6,15 +6,15 @@ import cv2
 import os
 from PIL import Image
 
-Xfolder_path = 'data/young'  
-Yfolder_path = 'data/old'
+Xfolder_path = 'data/cacd/old'  
+Yfolder_path = 'data/cacd/young'
 
 image_list = []
 image_dimensions = []  
 
-for filename in os.listdir(folder_path):
+for filename in os.listdir(Xfolder_path):
     if filename.endswith(".jpg") or filename.endswith(".png"):
-        image_path = os.path.join(folder_path, filename)
+        image_path = os.path.join(Xfolder_path, filename)
         image = Image.open(image_path)
         image_list.append(image)
 
@@ -85,7 +85,7 @@ autoencoder.fit(X_train, Y_train, epochs=50, batch_size=32, shuffle=True)
 
 
 
-test_image_path = 'path/to/your/image.jpg'  # Replace with your image path
+test_image_path = 'data/test/elon.jpg'  
 test_image = Image.open(test_image_path)
 
 # Display the image (optional)
